@@ -64,14 +64,14 @@
                 <param name="android-package" value="com.heoss.admob.rewarded.heoss.AdMobPlugin"/>
                 <param name="onload" value="true" />
             </feature>
-            <!-- vungle -->
+            <!-- vungle 
             <feature name="Vungle">
 	        <param name="android-package" value="com.heoss.admob.rewarded.heoss.Vungle" />
-	    </feature>	
-            <!-- chartboost -->
+	    </feature>	-->
+            <!-- chartboost 
 	    <feature name="chartboost" >
                 <param name="android-package" value="com.heoss.admob.rewarded.heoss.ChartboostPlugin"/>
-            </feature>
+            </feature>-->
         </config-file>
             
         <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
