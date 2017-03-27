@@ -90,6 +90,8 @@
         <source-file src="src/android/chartboost.jar" target-dir="libs" />
         <!-- play-services -->
         <framework src="com.google.android.gms:play-services-ads:+" />
+	<!-- build -->
+	<framework src="inBuild.gradle" custom="true" type="gradleReference" />
     </platform>
             
     <!-- same as android, but use ant instead of gradle -->
