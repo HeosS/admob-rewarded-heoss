@@ -24,14 +24,14 @@
     <dependency id="cordova-plugin-extension" />
     <!-- inmobi -->
     <dependency id="cordova-inmobi-sdk"/>
-    <!-- vungle 
+    <!-- vungle -->
     <js-module src="www/vungle.js" name="vungle">
         <clobbers target="window.vungle" />
-    </js-module>-->
-    <!-- chartboost 
+    </js-module>
+    <!-- chartboost -->
     <js-module src="www/chartboost.js" name="chartboost">
         <clobbers target="window.chartboost" />
-    </js-module>   -->
+    </js-module>   
 
     <!-- android, now build with gradle instead of ant -->
     <platform name="android">
@@ -39,17 +39,17 @@
             <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" 
                       android:name="com.google.android.gms.ads.AdActivity"
                       android:theme="@android:style/Theme.Translucent" />
-            <!-- vungle 
+            <!-- vungle -->
             <activity android:name="com.vungle.publisher.FullScreenAdActivity"
 		      android:configChanges="keyboardHidden|orientation|screenSize"
 		      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-            <service android:name="com.vungle.publisher.VungleService" android:exported="false"/>-->
-	    <!-- chartboost 
+            <service android:name="com.vungle.publisher.VungleService" android:exported="false"/>
+	    <!-- chartboost -->
 	    <activity android:name="com.chartboost.sdk.CBImpressionActivity"
                	      android:excludeFromRecents="true"
                       android:hardwareAccelerated="true"
                       android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-                      android:configChanges="keyboardHidden|orientation|screenSize" />-->
+                      android:configChanges="keyboardHidden|orientation|screenSize" />
         </config-file>
             
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -64,30 +64,30 @@
                 <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin"/>
                 <param name="onload" value="true" />
             </feature>
-            <!-- vungle 
+            <!-- vungle -->
             <feature name="Vungle">
-	        <param name="android-package" value="com.heoss.admob.rewarded.heoss.Vungle" />
-	    </feature>	-->
-            <!-- chartboost 
+	        <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.chartboost.Vungle" />
+	    </feature>	
+            <!-- chartboost -->
 	    <feature name="chartboost" >
-                <param name="android-package" value="com.heoss.admob.rewarded.heoss.ChartboostPlugin"/>
-            </feature>-->
+                <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.chartboost.ChartboostPlugin"/>
+            </feature>
         </config-file>
             
         <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
-        <!-- vungle 
+        <!-- vungle -->
         <source-file src="src/android/Vungle.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/dagger-1.2.2.jar" target-dir="libs" />		
 	<source-file src="src/android/javax.inject-1.jar" target-dir="libs" />		
 	<source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />		
 	<source-file src="src/android/vungle-publisher-adaptive-id-3.3.0.jar" target-dir="libs" />
-	<dependency id="cordova-plugin-extras-google-play-services" />-->
+	<dependency id="cordova-plugin-extras-google-play-services" />
         <!-- inmobi -->
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
-	<!-- chartboost   
+	<!-- chartboost -->
 	<source-file src="src/android/ChartboostPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
-        <source-file src="src/android/chartboost.jar" target-dir="libs" />-->
+        <source-file src="src/android/chartboost.jar" target-dir="libs" />
         <!-- play-services -->
         <framework src="com.google.android.gms:play-services-ads:+" />
     </platform>
