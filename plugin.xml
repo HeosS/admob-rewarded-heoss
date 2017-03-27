@@ -56,6 +56,10 @@
                       android:hardwareAccelerated="true"
                       android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
                       android:configChanges="keyboardHidden|orientation|screenSize" />
+	    <!-- inmobi -->
+	    <activity android:name="com.inmobi.rendering.InMobiAdActivity"
+	              android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize"
+		      android:hardwareAccelerated="true" />
         </config-file>
             
         <config-file target="AndroidManifest.xml" parent="/*">
