@@ -61,7 +61,7 @@
           
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
-                <param name="android-package" value="com.heoss.admob.rewarded.heoss.AdMobPlugin"/>
+                <param name="android-package" value="com.HeosS.admob.rewarded.heoss.AdMobPlugin"/>
                 <param name="onload" value="true" />
             </feature>
             <!-- vungle 
