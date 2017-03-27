@@ -23,6 +23,7 @@
 
     <dependency id="cordova-plugin-extension" />
     <dependency id="cordova-inmobi-sdk"/>
+    <dependency id="cordova-plugin-flurry"/>
 
     <!-- android, now build with gradle instead of ant -->
     <platform name="android">
@@ -45,6 +46,7 @@
         <source-file src="src/android/AdMobMediation.java" target-dir="src/com/rjfun/cordova/admob" />
         <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/rjfun/cordova/admob" />
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
+        <source-file src="flurryAndroidDFPandAdMobMediationAdapter-5.0.0.r1.jar" target-dir="libs" />
         <framework src="com.google.android.gms:play-services-ads:+" />
      </platform>
      
