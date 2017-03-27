@@ -28,6 +28,10 @@
     <js-module src="www/vungle.js" name="vungle">
         <clobbers target="window.vungle" />
     </js-module>	
+    <!-- chartboost -->
+    <js-module src="www/chartboost.js" name="chartboost">
+        <clobbers target="window.chartboost" />
+    </js-module>   
 
     <!-- android, now build with gradle instead of ant -->
     <platform name="android">
@@ -40,9 +44,16 @@
 		      android:configChanges="keyboardHidden|orientation|screenSize"
 		      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
             <service android:name="com.vungle.publisher.VungleService" android:exported="false"/>
+	    <!-- chartboost -->
+	    <activity android:name="com.chartboost.sdk.CBImpressionActivity"
+               	      android:excludeFromRecents="true"
+                      android:hardwareAccelerated="true"
+                      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+                      android:configChanges="keyboardHidden|orientation|screenSize" />
         </config-file>
             
         <config-file target="AndroidManifest.xml" parent="/*">
+	    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -50,19 +61,23 @@
           
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
-                <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin"/>
+                <param name="android-package" value="com.heoss.admob.rewarded.heoss.AdMobPlugin"/>
                 <param name="onload" value="true" />
             </feature>
             <!-- vungle -->
             <feature name="Vungle">
-	        <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.vungle.Vungle" />
+	        <param name="android-package" value="com.heoss.admob.rewarded.heoss.Vungle" />
 	    </feature>	
+            <!-- chartboost -->
+	    <feature name="chartboost" >
+                <param name="android-package" value="com.heoss.admob.rewarded.heoss.ChartboostPlugin"/>
+            </feature>
         </config-file>
             
-        <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/cordova/admob" />
-        <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/heoss/cordova/admob" />
+        <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
+        <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <!-- vungle -->
-        <source-file src="src/android/Vungle.java" target-dir="src/com/heoss/cordova/plugin/ad/vungle" />
+        <source-file src="src/android/Vungle.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/dagger-1.2.2.jar" target-dir="libs" />		
 	<source-file src="src/android/javax.inject-1.jar" target-dir="libs" />		
 	<source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />		
@@ -70,6 +85,9 @@
 	<dependency id="cordova-plugin-extras-google-play-services" />
         <!-- inmobi -->
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
+	<!-- chartboost -->  
+	<source-file src="src/android/ChartboostPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
+        <source-file src="src/android/chartboost.jar" target-dir="libs" />
         <!-- play-services -->
         <framework src="com.google.android.gms:play-services-ads:+" />
     </platform>
