@@ -22,8 +22,6 @@
     </js-module>
 
     <dependency id="cordova-plugin-extension" />
-    <!-- inmobi -->
-    <dependency id="cordova-inmobi-sdk"/>
     <!-- vungle -->
     <js-module src="www/vungle.js" name="vungle">
         <clobbers target="window.vungle" />
@@ -96,13 +94,14 @@
 	<source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />		
 	<source-file src="src/android/vungle-publisher-adaptive-id-3.3.0.jar" target-dir="libs" />
 	<source-file src="VungleAdapter.aar" target-dir="libs" />
-	<dependency id="cordova-plugin-extras-google-play-services" />
         <!-- inmobi -->
+	<source-file src="InMobi-6.1.1.jar" target-dir="libs" />
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
 	<!-- chartboost -->
 	<source-file src="src/android/ChartboostPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/chartboost.jar" target-dir="libs" />
         <!-- play-services -->
+	<dependency id="cordova-plugin-extras-google-play-services" />
         <framework src="com.google.android.gms:play-services-ads:+" />
 	<!-- build -->
 	<framework src="inBuild.gradle" custom="true" type="gradleReference" />
