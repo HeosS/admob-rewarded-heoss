@@ -88,6 +88,7 @@
 	<source-file src="src/android/javax.inject-1.jar" target-dir="libs" />		
 	<source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />		
 	<source-file src="src/android/vungle-publisher-adaptive-id-3.3.0.jar" target-dir="libs" />
+	<source-file src="VungleAdapter.aar" target-dir="libs" />
 	<dependency id="cordova-plugin-extras-google-play-services" />
         <!-- inmobi -->
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
