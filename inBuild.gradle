@@ -1,0 +1,3 @@
+dependencies {
+  compile 'com.google.ads.mediation:chartboost:6.6.0.0'
+}
