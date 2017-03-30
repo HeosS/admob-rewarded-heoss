@@ -105,11 +105,11 @@ public class Vungle extends CordovaPlugin {
 	//	//
 	//}
 	
-	@Override
-	public void onStart() {
-		super.onStart();
-		vunglePub.onStart(cordova.getActivity());
-	}
+	//@Override
+	//public void onStart() {
+		//super.onStart();
+		//vunglePub.onStart(cordova.getActivity());
+	//}
 	
 	@Override
 	public void onPause(boolean multitasking) {
@@ -123,17 +123,17 @@ public class Vungle extends CordovaPlugin {
 		vunglePub.onResume(cordova.getActivity());
 	}
 	
-	@Override
-	public void onStop() {
-		super.onStop();
-		vunglePub.onStop(cordova.getActivity());
-	}
+	//@Override
+	//public void onStop() {
+		//super.onStop();
+		//vunglePub.onStop(cordova.getActivity());
+	//}
 	
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-		vunglePub.onDestroy(cordova.getActivity());
-	}
+	//@Override
+	//public void onDestroy() {
+		//super.onDestroy();
+		//vunglePub.onDestroy(cordova.getActivity());
+	//}
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
