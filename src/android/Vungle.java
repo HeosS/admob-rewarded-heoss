@@ -114,13 +114,13 @@ public class Vungle extends CordovaPlugin {
 	@Override
 	public void onPause(boolean multitasking) {
 		super.onPause(multitasking);
-		vunglePub.onPause(cordova.getActivity());
+		vunglePub.onPause();
 	}
 	
 	@Override
 	public void onResume(boolean multitasking) {
 		super.onResume(multitasking);
-		vunglePub.onResume(cordova.getActivity());
+		vunglePub.onResume();
 	}
 	
 	//@Override
