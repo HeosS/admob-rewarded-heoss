@@ -2,7 +2,6 @@ dependencies {
   compile 'com.google.ads.mediation:chartboost:6.6.0.0'
   compile fileTree(dir: 'libs', include: ['*.jar'])  // Vungle SDK
   compile(name:'VungleAdapter', 'ext':'aar')  // Vungle Adapter for AdMob
-  compile 'com.google.android.gms:play-services:8.4.0'
 }
 
 repositories {
