@@ -109,11 +109,11 @@ public class ChartboostPlugin extends CordovaPlugin {
 	//	//
 	//}
 	
-	//@Override
-	//public void onStart() {//build error
-	//	super.onStart();
-	//	//
-	//}
+	@Override
+	public void onStart() {//build error
+		super.onStart();
+		Chartboost.onStart(cordova.getActivity());
+	}
 	
 	@Override
 	public void onPause(boolean multitasking) {
@@ -127,11 +127,11 @@ public class ChartboostPlugin extends CordovaPlugin {
 		Chartboost.onResume(cordova.getActivity());
 	}
 	
-	//@Override
-	//public void onStop() {//build error
-	//	super.onStop();
-	//	//
-	//}
+	@Override
+	public void onStop() {//build error
+		super.onStop();
+		Chartboost.onStop(cordova.getActivity());
+	}
 	
 	@Override
 	public void onDestroy() {
