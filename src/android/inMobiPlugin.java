@@ -50,7 +50,7 @@ public class inMobiPlugin extends CordovaPlugin {
         Log.d("InMobi", "InMobi plugin called");
         if (!this.initialized)
 		{
-			InMobi.initialize(cordova.getActivity(), "a521b02bc0614b32980b0c0d0ba36195");
+			InMobi.initialize(cordova.getActivity(), "7a2c79bf55744545ae19267e3a272298");
 			interstitial = new IMInterstitial(cordova.getActivity(), "a521b02bc0614b32980b0c0d0ba36195");
 			
 			adInterstitialListener = new AdInterstitialListener();
