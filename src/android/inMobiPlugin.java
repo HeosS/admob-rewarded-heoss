@@ -4,7 +4,6 @@ import java.util.Map;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,8 +20,7 @@ import com.inmobi.monetization.IMErrorCode;
 import com.inmobi.monetization.IMInterstitial;
 import com.inmobi.monetization.IMInterstitialListener;
 
-public class CDVInMobi extends CordovaPlugin {
-	
+public class inMobiPlugin extends CordovaPlugin {
 	public static final int AD_REQUEST_SUCCEEDED = 101;
 	public static final int AD_REQUEST_FAILED = 102;
 	public static final int ON_SHOW_MODAL_AD = 103;
@@ -52,8 +50,8 @@ public class CDVInMobi extends CordovaPlugin {
         Log.d("InMobi", "InMobi plugin called");
         if (!this.initialized)
 		{
-			InMobi.initialize(cordova.getActivity(), "Insert InMobi property ID here");
-			interstitial = new IMInterstitial(cordova.getActivity(), "Insert InMobi property ID here");
+			InMobi.initialize(cordova.getActivity(), "a521b02bc0614b32980b0c0d0ba36195");
+			interstitial = new IMInterstitial(cordova.getActivity(), "a521b02bc0614b32980b0c0d0ba36195");
 			
 			adInterstitialListener = new AdInterstitialListener();
 			interstitial.setIMInterstitialListener(adInterstitialListener);
@@ -115,7 +113,7 @@ public class CDVInMobi extends CordovaPlugin {
 
 		@Override
 		public void onInterstitialInteraction(IMInterstitial arg0,
-				Map<String, String> arg1) {
+			Map<String, String> arg1) {
 			// no-op
 		}
 
