@@ -229,7 +229,7 @@ public class Vungle extends CordovaPlugin {
 		String str2 = Util.md5("cordova-plugin-ad-vungle: " + email);
 		String str3 = Util.md5("com.cranberrygame.cordova.plugin.: " + email);
 		String str4 = Util.md5("com.cranberrygame.cordova.plugin.ad.vungle: " + email);
-		String str5 = Util.md5("com.cranberrygame.cordova.plugin.ad.video.vungle: " + email);*/
+		String str5 = Util.md5("com.cranberrygame.cordova.plugin.ad.video.vungle: " + email);
 		if(licenseKey != null && (licenseKey.equalsIgnoreCase(str1) || licenseKey.equalsIgnoreCase(str2) || licenseKey.equalsIgnoreCase(str3) || licenseKey.equalsIgnoreCase(str4) || licenseKey.equalsIgnoreCase(str5))) {
 			this.validLicenseKey = true;
 			//
@@ -248,7 +248,9 @@ public class Vungle extends CordovaPlugin {
 		else {
 			Log.d(LOG_TAG, String.format("%s", "invalid licenseKey"));
 			this.validLicenseKey = false;
-		}
+		}*/
+		Log.d(LOG_TAG, String.format("%s", "valid licenseKey"));
+		this.validLicenseKey = true;
 		//if (!this.validLicenseKey)
 		//	Util.alert(cordova.getActivity(),"Cordova Vungle: invalid email / license key. You can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova");			
 	}
