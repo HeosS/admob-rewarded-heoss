@@ -15,7 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-//import com.inmobi.commons.InMobi;
+import com.inmobi.commons.InMobi;
 
 import com.inmobi.monetization;
 import com.inmobi.monetization.IMIncentivisedListener;
