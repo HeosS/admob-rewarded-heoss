@@ -4,11 +4,11 @@ function InMobi() {
 	var self = this;
 
 	self.init = function() {
-		cordova.exec(function(){}, function(){}, "CDVInMobi", "init", []);
+		cordova.exec(function(){}, function(){}, "inMobiPlugin", "init", []);
 	};
 
 	self.showAd = function() {
-		cordova.exec(function(){}, function(){}, "CDVInMobi", "showAd", []);
+		cordova.exec(function(){}, function(){}, "inMobiPlugin", "showAd", []);
 	};
 }
 
