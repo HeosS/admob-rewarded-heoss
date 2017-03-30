@@ -278,7 +278,7 @@ public class Vungle extends CordovaPlugin {
 		//vunglePub.playAd(overrideConfig);		
 	}
 
-	class MyEventListener implements EventListener {	
+	/*class MyEventListener implements EventListener {	
 	
 		@Override
 		public void onAdPlayableChanged(boolean isAdPlayable) {
@@ -343,15 +343,7 @@ public class Vungle extends CordovaPlugin {
 			}
 			else {
 				Log.d(LOG_TAG, "onVideoView: not completed");
-/*				
-				PluginResult pr = new PluginResult(PluginResult.Status.OK, "onRewardedVideoAdNotCompleted");
-				pr.setKeepCallback(true);
-				callbackContextKeepCallback.sendPluginResult(pr);
-				//PluginResult pr = new PluginResult(PluginResult.Status.ERROR);
-				//pr.setKeepCallback(true);
-				//callbackContextKeepCallback.sendPluginResult(pr);
-*/				
 			}
 		}
-	}	
+	}*/	
 } 
