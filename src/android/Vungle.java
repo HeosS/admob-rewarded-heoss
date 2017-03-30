@@ -93,17 +93,17 @@ public class Vungle extends CordovaPlugin {
 	// get the VunglePub instance
 	final VunglePub vunglePub = VunglePub.getInstance();
 	
-    @Override
+    	@Override
 	public void pluginInitialize() {
 		super.pluginInitialize();
 		//
-    }
+    	}
 	
-	//@Override
-	//public void onCreate(Bundle savedInstanceState) {//build error
-	//	super.onCreate(savedInstanceState);
-	//	//
-	//}
+	@Override
+	public void onCreate(Bundle savedInstanceState) {//build error
+		super.onCreate(savedInstanceState);
+		vunglePub.init(this, appId);
+	}
 	
 	//@Override
 	//public void onStart() {
