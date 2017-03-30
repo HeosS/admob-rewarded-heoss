@@ -10,7 +10,4 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])  // Vungle SDK
   compile(name:'VungleAdapter', 'ext':'aar')  // Vungle Adapter for AdMob
   compile 'com.google.android.gms:play-services:8.4.0'
-  compile 'com.inmobi.monetization:inmobi-ads:6.1.1'
-  compile 'com.squareup.picasso:picasso:2.5.2'
-  compile 'com.android.support:appcompat-v7:24.0.0'
 }
