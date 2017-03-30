@@ -111,7 +111,7 @@
 	<source-file src="src/android/vungle-publisher-adaptive-id-4.0.3.jar" target-dir="libs" />
 	<source-file src="VungleAdapter.aar" target-dir="libs" />
         <!-- inmobi -->
-	<source-file src="InMobi-6.1.1.jar" target-dir="libs" />
+	<source-file src="src/android/InMobi-6.1.1.jar" target-dir="libs" />
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
 	<source-file src="src/android/inMobiPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
 	<!-- chartboost -->
