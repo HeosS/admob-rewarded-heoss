@@ -105,11 +105,11 @@ public class Vungle extends CordovaPlugin {
 	//	//
 	//}
 	
-	//@Override
-	//public void onStart() {//build error
-	//	super.onStart();
-	//	//
-	//}
+	@Override
+	public void onStart() {
+		super.onStart();
+		vunglePub.onStart();
+	}
 	
 	@Override
 	public void onPause(boolean multitasking) {
@@ -123,16 +123,16 @@ public class Vungle extends CordovaPlugin {
 		vunglePub.onResume();
 	}
 	
-	//@Override
-	//public void onStop() {//build error
-	//	super.onStop();
-	//	//
-	//}
+	@Override
+	public void onStop() {
+		super.onStop();
+		vunglePub.onStop();
+	}
 	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		//
+		vunglePub.onDestroy();
 	}
 
 	@Override
