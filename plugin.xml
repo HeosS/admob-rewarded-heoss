@@ -29,7 +29,11 @@
     <!-- chartboost -->
     <js-module src="www/chartboost.js" name="chartboost">
         <clobbers target="window.chartboost" />
-    </js-module>   
+    </js-module>
+    <!-- inMobi -->
+    <js-module src="www/inMobi.js" name="InMobi">
+        <clobbers target="InMobi" />
+    </js-module>
 
     <!-- android, now build with gradle instead of ant -->
     <platform name="android">
@@ -91,6 +95,10 @@
 	    <feature name="chartboost" >
                 <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.chartboost.ChartboostPlugin"/>
             </feature>
+	    <!-- inmobi -->
+	    <feature name="inMobiPlugin" >
+                <param name="android-package" value="org.apache.cordova.inmobi.inMobiPlugin"/>
+            </feature>
         </config-file>
             
         <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
@@ -105,6 +113,7 @@
         <!-- inmobi -->
 	<source-file src="InMobi-6.1.1.jar" target-dir="libs" />
         <source-file src="libadapterinmobi.jar" target-dir="libs" />
+	<source-file src="src/android/inMobiPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
 	<!-- chartboost -->
 	<source-file src="src/android/ChartboostPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/chartboost.jar" target-dir="libs" />
