@@ -30,7 +30,7 @@ import android.view.Surface;
 //
 import java.util.*;//Random
 
-class Util {
+/*class Util {
 
 	//ex) Util.alert(cordova.getActivity(),"message");
 	public static void alert(Activity activity, String message) {
@@ -77,7 +77,7 @@ class Util {
         }
         return "";
     }
-}
+}*/
 
 public class Vungle extends CordovaPlugin {
 	private final String LOG_TAG = "Vungle";
@@ -114,13 +114,13 @@ public class Vungle extends CordovaPlugin {
 	@Override
 	public void onPause(boolean multitasking) {
 		super.onPause(multitasking);
-		vunglePub.onPause();
+		vunglePub.onPause(cordova.getActivity());
 	}
 	
 	@Override
 	public void onResume(boolean multitasking) {
 		super.onResume(multitasking);
-		vunglePub.onResume();
+		vunglePub.onResume(cordova.getActivity());
 	}
 	
 	//@Override
@@ -263,7 +263,7 @@ public class Vungle extends CordovaPlugin {
 		}
 
 		vunglePub.init(cordova.getActivity(), appId);
-		vunglePub.setEventListeners(new MyEventListener());//listener needs to come after init on android vunlge sdk
+		//vunglePub.setEventListeners(new MyEventListener());//listener needs to come after init on android vunlge sdk
 		
 		final AdConfig config = vunglePub.getGlobalAdConfig();
 		config.setOrientation(Orientation.autoRotate);//for android
