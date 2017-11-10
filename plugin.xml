@@ -7,9 +7,9 @@
       
     <name>admob-rewarded-heoss</name>
     <description></description>
-    <author>XXX</author>
+    <author>HeosS</author>
     <license>MIT</license>
-    <keywords>rjfun,admob,google,ad</keywords>
+    <keywords>admob,google,ad</keywords>
     <repo>https://github.com/HeosS/admob-rewarded-heoss.git</repo>
     <issue>https://github.com/HeosS/admob-rewarded-heoss/issues</issue>
 
@@ -22,14 +22,14 @@
     </js-module>
 
     <dependency id="cordova-plugin-extension" />
-    <!-- vungle -->
+    <!-- vungle 
     <js-module src="www/vungle.js" name="vungle">
         <clobbers target="window.vungle" />
-    </js-module>
-    <!-- chartboost -->
+    </js-module>-->
+    <!-- chartboost 
     <js-module src="www/chartboost.js" name="chartboost">
         <clobbers target="window.chartboost" />
-    </js-module>
+    </js-module>-->
 
     <!-- android, now build with gradle instead of ant -->
     <platform name="android">
@@ -37,7 +37,7 @@
             <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" 
                       android:name="com.google.android.gms.ads.AdActivity"
                       android:theme="@android:style/Theme.Translucent" />
-            <!-- vungle -->
+            <!-- vungle 
             <activity android:name="com.vungle.publisher.FullScreenAdActivity"
 		      android:configChanges="keyboardHidden|orientation|screenSize"
 		      android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
@@ -47,20 +47,23 @@
 	    <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
 		      android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
 		      android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
-            <service android:name="com.vungle.publisher.VungleService" android:exported="false"/>
-	    <!-- chartboost -->
+            <service android:name="com.vungle.publisher.VungleService" android:exported="false"/>-->
+	    <!-- chartboost 
 	    <activity android:name="com.chartboost.sdk.CBImpressionActivity"
                	      android:excludeFromRecents="true"
                       android:hardwareAccelerated="true"
                       android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-                      android:configChanges="keyboardHidden|orientation|screenSize" />
+                      android:configChanges="keyboardHidden|orientation|screenSize" />-->
         </config-file>
             
         <config-file target="AndroidManifest.xml" parent="/*">
-	    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+		
+	    <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 	    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
         </config-file>
           
@@ -69,28 +72,28 @@
                 <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin"/>
                 <param name="onload" value="true" />
             </feature>
-            <!-- vungle -->
+            <!-- vungle
             <feature name="Vungle">
 	        <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.chartboost.Vungle" />
-	    </feature>	
-            <!-- chartboost -->
+	    </feature>	 -->
+            <!-- chartboost
 	    <feature name="chartboost" >
                 <param name="android-package" value="com.cranberrygame.cordova.plugin.ad.chartboost.ChartboostPlugin"/>
-            </feature>
+            </feature> -->
         </config-file>
             
         <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
-        <!-- vungle -->
+        <!-- vungle 
         <source-file src="src/android/Vungle.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
         <source-file src="src/android/dagger-2.7.jar" target-dir="libs" />		
 	<source-file src="src/android/javax.inject-1.jar" target-dir="libs" />		
 	<source-file src="src/android/nineoldandroids-2.4.0.jar" target-dir="libs" />		
 	<source-file src="src/android/vungle-publisher-adaptive-id-4.0.3.jar" target-dir="libs" />
-	<source-file src="VungleAdapter.aar" target-dir="libs" />
-	<!-- chartboost -->
+	<source-file src="VungleAdapter.aar" target-dir="libs" />-->
+	<!-- chartboost
 	<source-file src="src/android/ChartboostPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
-        <source-file src="src/android/chartboost.jar" target-dir="libs" />
+        <source-file src="src/android/chartboost.jar" target-dir="libs" /> -->
         <!-- play-services -->
 	<dependency id="cordova-plugin-extras-google-play-services" />
         <framework src="com.google.android.gms:play-services-ads:+" />
