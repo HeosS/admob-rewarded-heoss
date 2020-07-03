@@ -24,34 +24,33 @@
     <dependency id="cordova-plugin-extension" />
 
     <!-- android, now build with gradle instead of ant -->
+    <preference name="ADMOB_ANDROID_APP_ID" default="ca-app-pub-5113252486740558~2315752024"/>
+    <preference name="PLAY_SERVICES_VERSION" default="16.0.0"/>
+
+    <!-- android, now build with gradle instead of ant -->
     <platform name="android">
+        <framework src="com.google.android.gms:play-services-ads:$PLAY_SERVICES_VERSION" />
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" 
                       android:name="com.google.android.gms.ads.AdActivity"
                       android:theme="@android:style/Theme.Translucent" />
+            <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="$ADMOB_ANDROID_APP_ID"/>
         </config-file>
-            
         <config-file target="AndroidManifest.xml" parent="/*">
-		
-	    <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
         </config-file>
-          
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
                 <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
-            
-        <source-file src="src/android/AdMobMediation.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
-        <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/heoss/admob/rewarded/heoss" />
-        
-        <!-- play-services -->
-	    <dependency id="cordova-plugin-extras-google-play-services" />
-        <framework src="com.google.android.gms:play-services-ads:+" />
-	    <!-- build -->
-	    <framework src="inBuild.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/android/AdMobMediation.java" target-dir="src/com/rjfun/cordova/admob" />
+        <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/rjfun/cordova/admob" />
     </platform>
 </plugin>
