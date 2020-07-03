@@ -46,8 +46,6 @@ public class AdMobPlugin extends GenericAdPlugin {
   private static final String OPT_INMOBI = "InMobi";
   private static final String OPT_FACEBOOK = "Facebook";
   private static final String OPT_MOBFOX = "MobFox";
-  private static final String OPT_VUNGLE = "Vungle";
-  private static final String OPT_CHARTBOOST = "Chartboost";
 
   private static final String TEST_BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
   private static final String TEST_INTERSTITIAL_ID = "ca-app-pub-3940256099942544/1033173712";
@@ -182,9 +180,11 @@ public class AdMobPlugin extends GenericAdPlugin {
     if(view instanceof PublisherAdView) {
       PublisherAdView dfpView = (PublisherAdView) view;
       return dfpView.getAdSize();
-    } else {
+    } else if(view instanceof AdView) {
       AdView admobView = (AdView) view;
       return admobView.getAdSize();
+    } else {
+      return new AdSize(0,0);
     }
   }
 
@@ -312,7 +312,7 @@ protected void __showInterstitial(Object interstitial) {
 
     synchronized (mLock) {
       if (!mIsRewardedVideoLoading) {
-        //mIsRewardedVideoLoading = true;
+        mIsRewardedVideoLoading = true;
         Bundle extras = new Bundle();
         extras.putBoolean("_noRefresh", true);
         AdRequest adRequest = new AdRequest.Builder()
@@ -373,11 +373,6 @@ protected void __showInterstitial(Object interstitial) {
       }
     }
 
-    if(mGender != null) {
-      if("male".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_MALE);
-      else if("female".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_FEMALE);
-      else builder.setGender(AdRequest.GENDER_UNKNOWN);
-    }
     if(mLocation != null) builder.setLocation(mLocation);
     if(mForFamily != null) {
       Bundle extras = new Bundle();
@@ -421,15 +416,10 @@ protected void __showInterstitial(Object interstitial) {
       builder = builder.addNetworkExtras(new AdMobExtras(bundle));
     }
 
-    if(mGender != null) {
-      if("male".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_MALE);
-      else if("female".compareToIgnoreCase(mGender) != 0) builder.setGender(AdRequest.GENDER_FEMALE);
-      else builder.setGender(AdRequest.GENDER_UNKNOWN);
-    }
     if(mLocation != null) builder.setLocation(mLocation);
     if(mForFamily != null) {
       Bundle extras = new Bundle();
-      extras.putBoolean("is_designed_for_families", ("yes".compareToIgnoreCase(mForChild) == 0));
+      extras.putBoolean("is_designed_for_families", ("yes".compareToIgnoreCase(mForFamily) == 0));
       builder.addNetworkExtrasBundle(AdMobAdapter.class, extras);
     }
     if(mForChild != null) {
@@ -679,6 +669,11 @@ protected void __showInterstitial(Object interstitial) {
     @Override
     public void onRewardedVideoStarted() {
       fireAdEvent(EVENT_AD_WILLPRESENT, ADTYPE_REWARDVIDEO);
+    }
+
+    //@Override
+    public void onRewardedVideoCompleted() {
+      fireAdEvent(EVENT_AD_WILLDISMISS, ADTYPE_REWARDVIDEO);
     }
 
     @Override
